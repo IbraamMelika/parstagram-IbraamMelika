@@ -25,8 +25,6 @@ import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
-import android.hardware.Camera;
-
 import java.io.File;
 import java.util.List;
 
@@ -93,9 +91,10 @@ public class MainActivity extends AppCompatActivity {
 
         // If you call startActivityForResult() using an intent that no app can handle, your app will crash.
         // So as long as the result is not null, it's safe to use the intent.
+        startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
         if (intent.resolveActivity(getPackageManager()) != null) {
             // Start the image capture intent to take photo
-            startActivityForResult(intent, CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE);
+
         }
     }
 
